@@ -4,3 +4,5 @@
 # allow netd gpsd:tcp_socket rw_socket_perms;
 allow netd mediaserver_exec:file { getattr read };
 
+allow netd vendor_file:file { getattr };
+allow netd vendor_file:file { read };

@@ -67,10 +67,10 @@ PRODUCT_COPY_FILES += \
 
 # Audio common
 PRODUCT_PACKAGES += \
-    android.hardware.audio@2.0-service \
-		android.hardware.audio@6.0-impl \
-		android.hardware.audio.effect@6.0-impl \
+    android.hardware.audio.service \
+    android.hardware.audio@6.0-impl \
     android.hardware.soundtrigger@2.3-impl \
+    android.hardware.audio.effect@6.0-impl \
     audio.a2dp.default \
     audio.usb.default \
     audio.r_submix.default \
@@ -80,19 +80,23 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
-		frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
+    frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
-		frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
+
+ # Touch features
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.samsung
 
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.common@1.0-helper \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.5-service \
-		libstagefright_shim
+    libstagefright_shim
 
 # Camera configurations
 PRODUCT_COPY_FILES += \
@@ -102,9 +106,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.cas@1.2-service
 
-# debug (prebuilt)
-PRODUCT_PACKAGES += \
-    matlog
 
 # SoundPicker
 PRODUCT_PACKAGES += \
@@ -281,7 +282,7 @@ PRODUCT_PACKAGES += \
 # Shims
 PRODUCT_PACKAGES += \
     libcutils_shim \
-		libexynoscamera_shim
+    libexynoscamera_shim
 
 # USB
 PRODUCT_PACKAGES += \

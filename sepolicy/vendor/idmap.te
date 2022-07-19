@@ -1,2 +1,4 @@
 allow idmap mediaserver_exec:file { getattr read };
 
+allow idmap vendor_file:file { getattr };
+allow idmap vendor_file:file { read };

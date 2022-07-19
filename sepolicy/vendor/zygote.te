@@ -3,3 +3,5 @@ allow zygote exported_camera_prop:file read;
 allow zygote exported_camera_prop:file { getattr open };
 allow zygote mediaserver_exec:file { getattr read };
 
+allow zygote vendor_file:file { read };
+allow zygote vendor_file:file { getattr };

@@ -13,3 +13,5 @@ r_dir_file(cameraserver, media_rw_data_file);
 
 allow cameraserver mediaserver_exec:file { getattr read };
 
+allow cameraserver vendor_file:file { read };
+allow cameraserver vendor_file:file { getattr };
